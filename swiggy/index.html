@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiggy</title>
+  <link rel="stylesheet" href="swiggy.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <img src="https://upload.wikimedia.org/wikipedia/en/1/12/Swiggy_logo.svg" alt="Swiggy" class="logo" />
+    </div>
+    <div class="header-right">
+      <span class="location">📍 Chennai, Tamil Nadu</span>
+    </div>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="🔍 Search for food, restaurants..." oninput="filterMenu()" />
+  </div>
+
+  <!-- Category Filter -->
+  <div class="categories">
+    <button class="cat-btn active" onclick="filterCategory('All')">All</button>
+    <button class="cat-btn" onclick="filterCategory('Biryani')">🍗 Biryani</button>
+    <button class="cat-btn" onclick="filterCategory('Pizza')">🍕 Pizza</button>
+    <button class="cat-btn" onclick="filterCategory('Burger')">🍔 Burger</button>
+    <button class="cat-btn" onclick="filterCategory('South Indian')">🫓 South Indian</button>
+    <button class="cat-btn" onclick="filterCategory('Drinks')">🥤 Drinks</button>
+  </div>
+
+  <!-- Menu Items -->
+  <div class="section-title">Restaurants near you</div>
+  <div class="menu-grid" id="menuGrid"></div>
+
+  <!-- Orders Section -->
+  <div class="section-title" id="ordersTitle" style="display:none">Your Orders</div>
+  <div class="orders-list" id="ordersList"></div>
+
+  <!-- Order Success Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-inner">
+      <div class="popup-emoji">🎉</div>
+      <div class="popup-title">Order Placed!</div>
+      <div class="popup-msg" id="popupMsg"></div>
+      <button class="popup-btn" onclick="closePopup()">OK</button>
+    </div>
+  </div>
+
+  <!-- Back to Assistant -->
+  <a href="../index.html" class="back-btn">⬅ Back to Assistant</a>
+
+  <script src="../shared/store.js"></script>
+  <script src="../shared/bridge.js"></script>
+  <script src="swiggy.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uber</title>
+  <link rel="stylesheet" href="uber.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-logo">Uber</div>
+    <div class="header-location">📍 Chennai</div>
+  </div>
+
+  <!-- Booking Section -->
+  <div class="booking-section">
+    <div class="booking-title">Where to?</div>
+
+    <!-- From -->
+    <div class="input-group">
+      <div class="input-dot green"></div>
+      <input type="text" id="fromInput" placeholder="Pickup location" value="Home" />
+    </div>
+
+    <!-- To -->
+    <div class="input-group">
+      <div class="input-dot black"></div>
+      <input type="text" id="toInput" placeholder="Drop location" />
+    </div>
+
+    <!-- Quick Locations -->
+    <div class="quick-locations">
+      <div class="quick-title">Popular destinations</div>
+      <div class="quick-grid" id="quickGrid"></div>
+    </div>
+  </div>
+
+  <!-- Ride Types -->
+  <div class="ride-section">
+    <div class="ride-title">Choose a ride</div>
+    <div class="ride-list" id="rideList"></div>
+
+    <!-- Book Button -->
+    <button class="book-btn" onclick="bookRideNow()">Book Ride</button>
+  </div>
+
+  <!-- Active Ride Card -->
+  <div class="active-ride" id="activeRide" style="display:none">
+    <div class="active-title">🚗 Ride Booked!</div>
+    <div class="driver-card" id="driverCard"></div>
+  </div>
+
+  <!-- Ride History -->
+  <div class="section-title" id="historyTitle" style="display:none">Recent Rides</div>
+  <div class="rides-list" id="ridesList"></div>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-inner">
+      <div class="popup-emoji">🚗</div>
+      <div class="popup-title">Ride Booked!</div>
+      <div class="popup-msg" id="popupMsg"></div>
+      <button class="popup-btn" onclick="closePopup()">OK</button>
+    </div>
+  </div>
+
+  <!-- Back to Assistant -->
+  <a href="../index.html" class="back-btn">⬅ Back to Assistant</a>
+
+  <script src="../shared/store.js"></script>
+  <script src="../shared/bridge.js"></script>
+  <script src="uber.js"></script>
+</body>
+</html>

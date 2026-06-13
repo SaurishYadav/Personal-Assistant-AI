@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Assistant AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Animation -->
+  <div class="bg-circles">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+  </div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="ai-avatar">🤖</div>
+      <div class="header-info">
+        <div class="header-name">ARIA</div>
+        <div class="header-sub">AI Personal Assistant</div>
+      </div>
+    </div>
+    <div class="header-status">
+      <div class="status-dot"></div>
+      <span>Online</span>
+    </div>
+  </div>
+
+  <!-- App Shortcuts -->
+  <div class="app-shortcuts">
+    <a href="swiggy/index.html" class="app-icon swiggy">
+      <span>🍔</span>
+      <span>Swiggy</span>
+    </a>
+    <a href="uber/index.html" class="app-icon uber">
+      <span>🚗</span>
+      <span>Uber</span>
+    </a>
+    <a href="whatsapp/index.html" class="app-icon whatsapp">
+      <span>💬</span>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- Suggestion Chips -->
+  <div class="suggestions">
+    <div class="suggest-title">Try saying:</div>
+    <div class="chips">
+      <button class="chip" onclick="fillSuggestion('Order chicken biryani from Paradise')">
+        🍗 Order Biryani
+      </button>
+      <button class="chip" onclick="fillSuggestion('Book an auto from Home to Airport')">
+        🚗 Book Ride
+      </button>
+      <button class="chip" onclick="fillSuggestion('Send message to Mum that I will be late today')">
+        💬 Message Mum
+      </button>
+      <button class="chip" onclick="fillSuggestion('Order masala dosa from Saravana Bhavan')">
+        🫓 Order Dosa
+      </button>
+      <button class="chip" onclick="fillSuggestion('Book a mini cab from Home to Mall')">
+        🚙 Book Mini Cab
+      </button>
+      <button class="chip" onclick="fillSuggestion('Send message to Rahul that meeting is at 5pm')">
+        📩 Message Rahul
+      </button>
+    </div>
+  </div>
+
+  <!-- Chat Window -->
+  <div class="chat-container" id="chatContainer">
+    <!-- Messages appear here -->
+    <div class="welcome-msg">
+      <div class="welcome-emoji">👋</div>
+      <div class="welcome-text">Hi! I'm ARIA, your personal assistant.</div>
+      <div class="welcome-sub">I can order food, book rides, and send messages for you. Just ask!</div>
+    </div>
+  </div>
+
+  <!-- Input Area -->
+  <div class="input-area">
+    <div class="input-bar">
+      <button class="voice-btn" id="voiceBtn" onclick="toggleVoice()">🎤</button>
+      <input
+        type="text"
+        id="userInput"
+        placeholder="Ask me anything..."
+        onkeydown="handleKey(event)"
+      />
+      <button class="send-btn" onclick="sendMessage()">➤</button>
+    </div>
+    <div class="voice-status" id="voiceStatus"></div>
+  </div>
+
+  <script src="shared/store.js"></script>
+  <script src="shared/bridge.js"></script>
+  <script src="assistant.js"></script>
+</body>
+</html>
